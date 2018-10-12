@@ -1,5 +1,5 @@
 import React from 'react'  
-import { render } from 'react-dom'  
+//import { render } from 'react-dom'  
 
 import CarouselOne from './demo1' 
 import CarouselTwo from './demo2' 

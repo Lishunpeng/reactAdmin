@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+//import ReactDOM from 'react-dom';
 
 import { Tabs } from 'antd';
 const TabPane = Tabs.TabPane;

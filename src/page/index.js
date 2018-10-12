@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
-import { Layout, Row, Col, Avatar, Input, Menu, Dropdown, Icon, Badge  } from 'antd';
+import { Layout, Row, Col, Avatar, Input, Menu, Dropdown, Icon,Breadcrumb  } from 'antd';
 import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
+import './public.scss';  // or 'antd/dist/antd.less'
 
 import SiderComponent from './sider'
 import Tooltip from '../component/tooltip'
 import MyNews from '../component/myNews'
-
+import rootData from '../router/routerData' 
 const { Header, Footer, Sider, Content  } = Layout;
 
 // 
@@ -43,9 +44,25 @@ export default class Demo1 extends Component {
             valueTxt: value
         })
     }
-
+	changeBread = () => {
+		let {pathname} = this.props.location;
+		let result = {}
+		pathname = pathname.split('/');
+		for(let i in rootData){
+			rootData[i].path = rootData[i].path.replace('/','');
+			if(rootData[i].path === pathname[1]){
+				result.name = rootData[i].name;
+				if(pathname.length===3 && pathname[2]!=='' && rootData[i].child){
+					result.childName = rootData[i].child.name;
+				}
+				console.log(result);
+				return result;
+			}
+		}
+    }
     render () {
-        return (
+    	const breadData = this.changeBread();
+    	return (
             <div style={{minWidth:'1000px'}}>
                 <Layout>
                     <Header style={{color:'#fff',textAlign:'center',fontWeight:'bold'}}>
@@ -70,13 +87,18 @@ export default class Demo1 extends Component {
                                 getValue={this.getValue.bind(this)}
                             />
                         </Sider>
-                        <Content style={{marginLeft:'5%',height:'86vh',paddingRight:'2%',overflow:'auto',textAlign:'center'}}>
+                        <Content style={{marginLeft:'5%',height:'86vh',paddingRight:'2%',overflow:'auto',textAlign:'center'}} className="adminContent">
+                        	<Breadcrumb>
+							    <Breadcrumb.Item><a href="">首页</a></Breadcrumb.Item>
+							    <Breadcrumb.Item>{breadData && breadData.name}</Breadcrumb.Item>
+							    {breadData && breadData.childName?<Breadcrumb.Item>{breadData.childName}</Breadcrumb.Item>:''}
+							</Breadcrumb>
                             {this.props.children}
                         </Content>
                     </Layout>
                     <Footer style={{backgroundColor:'#001529',position:'fixed',bottom:0,width:'100vw',minWidth:'1000px',textAlign:'center',fontWeight:'bold',color:'#fff'}}>
                         2018/05/31  - react + Ant Design - gitHub地址：
-                        <a href="https://github.com/Hi-Sen/React-Antd-demo-one" target="_blank">https://github.com/Hi-Sen/React-Antd-demo-one</a>     
+                        <a href="https://github.com/Hi-Sen/React-Antd-demo-one" target="_blank" rel="noopener noreferrer">https://github.com/Hi-Sen/React-Antd-demo-one</a>     
                     </Footer>
                 </Layout>
             </div> 

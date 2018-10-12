@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
+import React from 'react';
 export default class TabbleDetail extends React.Component {
     render () {
+    	
         return (
-            <div>这是table详情</div>
+            <div>   
+            	
+                this is TabbleDetail
+            </div>
         )
     }
 }

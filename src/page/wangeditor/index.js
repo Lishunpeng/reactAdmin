@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import E from 'wangeditor'
-import { Button } from 'antd';
+//import { Button } from 'antd';
 
 export default class Editor extends React.Component {
     constructor (props) {

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+//import ReactDOM from 'react-dom';
 
 import './home.css'
-import { Carousel,Row, Col,Button  } from 'antd';
+import { Row, Col,Button  } from 'antd';
 
 export default class TabbleAll extends React.Component {
    
@@ -35,9 +35,7 @@ export default class TabbleAll extends React.Component {
                                         <Col span={6} style={{
                                             marginTop:'130px'
                                         }}>
-                                            <Button type="primary" onClick = {() => {
-                                                this.props.callback ? this.props.callback(item.ID) : ''
-                                            }}>查看商品详情</Button>
+                                            <Button type="primary">查看商品详情</Button>
                                         </Col>
                                     </Row>
                         })

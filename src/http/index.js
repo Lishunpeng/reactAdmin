@@ -20,9 +20,9 @@ axios.interceptors.request.use(function(config){
 //添加响应拦截器
 axios.interceptors.response.use(function(response){
     //对响应数据做些事
-    if(response.data.Code == 0) {
+    if(response.data.Code === 0) {
         return response.data;
-    }else if(response.data.Code == 1) {
+    }else if(response.data.Code === 1) {
         return response.Message;
     }
   },function(error){

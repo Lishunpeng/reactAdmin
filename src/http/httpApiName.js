@@ -1,5 +1,5 @@
 
-const apiVersion = 'v1'
+//const apiVersion = 'v1'
 
 const ApiName = {
     ApiGetHomePage : '/api/cms/lelch/homePage',          // 获取商品列表

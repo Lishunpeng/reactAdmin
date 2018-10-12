@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
+import React from 'react';
+//import ReactDOM from 'react-dom';
+import { Link } from 'react-router'
 import { Table, Icon, Divider } from 'antd';
-import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
+//import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
 
 const columns = [{
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: text => <a href="javascript:;">{text}</a>,
+    render: text => text,
   }, {
     title: 'Age',
     dataIndex: 'age',
@@ -22,13 +22,11 @@ const columns = [{
     key: 'action',
     render: (text, record) => (
       <span>
-        <a href="javascript:;">Action 一 {record.name}</a>
+      	<Link to = "/Tabble/Action">Action 一 {record.name}</Link>
         <Divider type="vertical" />
-        <a href="javascript:;">Delete</a>
+        <Link to = "/Tabble/Delete">Delete</Link> 
         <Divider type="vertical" />
-        <a href="javascript:;" className="ant-dropdown-link">
-          More actions <Icon type="down" />
-        </a>
+        <Link to = "/Tabble/More_actions " className="ant-dropdown-link">More actions <Icon type="down" /></Link>
       </span>
     ),
   }];
@@ -52,10 +50,7 @@ const columns = [{
   
 
 export default class TabbleDemo1 extends React.Component {
-    constructor (props) {
-        super(props)
-    }
-
+    
     render () {
         return (
             <div>

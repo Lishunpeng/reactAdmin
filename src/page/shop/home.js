@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+//import ReactDOM from 'react-dom';
 
 import './home.css'
-import { Carousel,Row, Col,Button, Spin   } from 'antd';
+import { Carousel, Spin   } from 'antd';
 
 import StoreComponent from './storeComponent'
-import { WSAENETUNREACH } from 'constants';
+//import { WSAENETUNREACH } from 'constants';
 
 export default class TabbleAll extends React.Component {
     constructor (props) {

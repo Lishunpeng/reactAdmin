@@ -3,9 +3,9 @@
  * 全局公告
  */
 
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Modal, Button, Badge } from 'antd';
+import React from 'react';
+//import ReactDOM from 'react-dom';
+import { Modal, Badge } from 'antd';
 
 export default class App extends React.Component {
     state = { visible: false }

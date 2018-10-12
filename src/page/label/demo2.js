@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+//import ReactDOM from 'react-dom';
 
 import { Tabs, Icon } from 'antd';
 const TabPane = Tabs.TabPane;
 
-function callback(key) {
-  console.log(key);
-}
 
 export default class Label extends React.Component {
     render () {

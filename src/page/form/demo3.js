@@ -1,6 +1,6 @@
 
 import React from 'react'  
-import { render } from 'react-dom'  
+//import { render } from 'react-dom'  
 import './demo1.css'
 
 import { Form, DatePicker, TimePicker, Button } from 'antd';

@@ -1,8 +1,7 @@
 import React from 'react'  
-import { render } from 'react-dom'  
+//import { render } from 'react-dom'  
 
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import { Divider } from 'antd';
 import './demo1.css'
 const FormItem = Form.Item;
 

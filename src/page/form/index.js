@@ -1,5 +1,5 @@
 import React from 'react'  
-import { render } from 'react-dom'  
+//import { render } from 'react-dom'  
 
 import FromOne from './demo1' 
 import FromTwo from './demo2' 
